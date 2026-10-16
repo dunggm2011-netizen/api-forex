@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: bitanex-signal
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: BITANEX_EMAIL
+        sync: false
+      - key: BITANEX_PASSWORD
+        sync: false
+    autoDeploy: true
+    healthCheckPath: /health
