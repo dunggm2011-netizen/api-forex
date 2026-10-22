@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: bitanex-signal-api
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 3000
+    autoDeploy: true
+    healthCheckPath: /health
